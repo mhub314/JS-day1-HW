@@ -6,16 +6,23 @@ the list and checks that the current name is in the string passed in. The output
 let dog_string = "Hello Max, my name is Dog, and I have purple eyes!"
 let dog_names = ["Max","HAS","PuRple","dog"]
 
-function findWords(){  
+function findWords(dog_string, dog_names){  
     for (let i = 0; i < dog_names.length; i++){
-        if (dog_string.includes(dog_names[0])){
-            return "Matched dog_name";
+        if (dog_string.toLowerCase().includes(dog_names[i].toLowerCase())) {
+            console.log("Matched " + dog_names[i]);
         } else {
-            return "No Matches";
+            console.log("No Matches")
         }
     }
 }
-console.log(findWords())
+console.log(findWords(dog_string, dog_names))
+
+
+// For #1, you are ending your loop too early by calling return 
+// inside of your loop. You should instead be calling a console.log() 
+// function to print the results and allow the loop to continue. Then, 
+// maybe consider adding a way to let your string and dog name be case 
+// insensitive
 
 
 //============Exercise #2 ============//
